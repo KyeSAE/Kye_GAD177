@@ -1,6 +1,8 @@
 {
   "dependencies": {
+    "com.unity.2d.animation": "10.2.3",
     "com.unity.2d.aseprite": "1.1.11",
+    "com.unity.2d.psdimporter": "9.1.2",
     "com.unity.2d.tilemap.extras": "4.1.1",
     "com.unity.collab-proxy": "2.11.3",
     "com.unity.feature.2d": "2.0.1",
