@@ -444,9 +444,17 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 896476624}
     - target: {fileID: 8920733270119472732, guid: 5321946108876674e969b3bfb89c0b53, type: 3}
+      propertyPath: damageSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 32fa9af2ab6c5bb47b205ba0d34dc589, type: 3}
+    - target: {fileID: 8920733270119472732, guid: 5321946108876674e969b3bfb89c0b53, type: 3}
       propertyPath: gameManager
       value: 
       objectReference: {fileID: 787735814}
+    - target: {fileID: 8920733270119472732, guid: 5321946108876674e969b3bfb89c0b53, type: 3}
+      propertyPath: useHealthSlider
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:
@@ -669,6 +677,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6703422934471519277, guid: 8ff923f66ffef6a48a59aea7c62edb6c, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 297761703447499198, guid: 13cf04016ee615b40b98286588dfeb88, type: 3}
     - target: {fileID: 8207825158515281786, guid: 8ff923f66ffef6a48a59aea7c62edb6c, type: 3}
       propertyPath: m_Name
       value: Enemy
@@ -736,7 +748,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 857073568758900887, guid: 05f6b443330f3e142bbfdcbf82a7381a, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 954023809278641247, guid: 05f6b443330f3e142bbfdcbf82a7381a, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
@@ -3345,6 +3357,22 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 5062462000427991292, guid: b4a1302468ac2b240b964808c28c07ee, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 7675826601332790545, guid: c23b8236d44567046b3efc26bdf3c35d, type: 3}
+    - target: {fileID: 5062462000427991292, guid: b4a1302468ac2b240b964808c28c07ee, type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5062462000427991292, guid: b4a1302468ac2b240b964808c28c07ee, type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5062462000427991292, guid: b4a1302468ac2b240b964808c28c07ee, type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5612716690806517058, guid: b4a1302468ac2b240b964808c28c07ee, type: 3}
       propertyPath: m_Name
       value: Coin
@@ -3413,6 +3441,22 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 22383440468080691, guid: 5edd4463e41961f40bea4ff0e92074c2, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -7580393870125072238, guid: b228796a51ed48f4fa66c574e8647aff, type: 3}
+    - target: {fileID: 22383440468080691, guid: 5edd4463e41961f40bea4ff0e92074c2, type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 22383440468080691, guid: 5edd4463e41961f40bea4ff0e92074c2, type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 22383440468080691, guid: 5edd4463e41961f40bea4ff0e92074c2, type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1236826839097757902, guid: 5edd4463e41961f40bea4ff0e92074c2, type: 3}
       propertyPath: m_LocalPosition.x
       value: 3.59
@@ -3527,6 +3571,22 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1254483950510969782, guid: f11b2bf8fa6aa124380b4539eba7f756, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 370836429328893637, guid: f2b6ac1b5bb91e447b775490070c0b2b, type: 3}
+    - target: {fileID: 1254483950510969782, guid: f11b2bf8fa6aa124380b4539eba7f756, type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1254483950510969782, guid: f11b2bf8fa6aa124380b4539eba7f756, type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1254483950510969782, guid: f11b2bf8fa6aa124380b4539eba7f756, type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1416050865525493428, guid: f11b2bf8fa6aa124380b4539eba7f756, type: 3}
       propertyPath: m_Name
       value: Damage Pick up
