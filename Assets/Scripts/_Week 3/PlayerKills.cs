@@ -85,19 +85,19 @@ public class PlayerKills : MonoBehaviour
 
     public void ResetKills()
     {
-        // TODO: Set the player's current kills back to 0.
+        // Set the player's current kills back to 0.
+        currentKills = 0;
 
 
-
-        // TODO: Call the function that updates the kills UI.
-
+        // Call the function that updates the kills UI.
+        UpdateKillsUI();
 
     }
 
     public void DebugAddKill()
     {
-        // TODO: Call AddKills and give it debugAddAmount.
-
+        // Call AddKills and give it debugAddAmount.
+        AddKills(debugAddAmount);
 
     }
 
