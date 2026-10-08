@@ -42,6 +42,12 @@ public class PlayerKills : MonoBehaviour
         }
     }
 
+    public int GetCurrentKills()
+    {
+
+        return currentKills;
+    }
+
     private void HandleDebugInput()
     {
         if (Keyboard.current == null)
