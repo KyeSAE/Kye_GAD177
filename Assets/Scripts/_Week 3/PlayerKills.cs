@@ -3,16 +3,14 @@ using UnityEngine.InputSystem;
 using TMPro;
 
 public class PlayerKills : MonoBehaviour
-{
-    // Complete each section marked TODO.
-
+{ 
     [Header("Kills")]
     public int currentKills = 0;
 
     [Header("Kills UI")]
     public TMP_Text killsText;
     public bool useKillsText = true;
-    public string killsPrefix = "Kills: ";
+    public string killsPrefix = "Killz: ";
 
     [Header("Debug")]
     public bool enableDebugKeys = true;
@@ -26,8 +24,8 @@ public class PlayerKills : MonoBehaviour
 
     private void Start()
     {
-        // TODO: Call the function that updates the kills UI.
-
+        //Call the function that updates the kills UI.
+        UpdateKillsUI();
 
 
         if (showDebugLogs == true)
@@ -55,18 +53,17 @@ public class PlayerKills : MonoBehaviour
         // call the function that adds kills.
         if (Keyboard.current[addKillKey].wasPressedThisFrame)
         {
-            // TODO: Call AddKills and give it debugAddAmount.
+            // Call AddKills and give it debugAddAmount.
 
-
+            AddKills(debugAddAmount);
         }
 
         // If the Reset Kills key is pressed,
         // call the function that resets the player's kills.
         if (Keyboard.current[resetKillsKey].wasPressedThisFrame)
         {
-            // TODO: Call ResetKills.
-
-
+            // Call ResetKills.
+            ResetKills();
         }
     }
 
@@ -77,12 +74,12 @@ public class PlayerKills : MonoBehaviour
             return;
         }
 
-        // TODO: Add amount to the player's current kills.
+        // Add amount to the player's current kills.
+        currentKills += amount;
 
 
-
-        // TODO: Call the function that updates the kills UI.
-
+        // Call the function that updates the kills UI.
+        UpdateKillsUI();
 
     }
 
@@ -111,7 +108,7 @@ public class PlayerKills : MonoBehaviour
             return;
         }
 
-        // TODO: Update the kills text using killsPrefix
+        // Update the kills text using killsPrefix
         // and the player's current kills.
 
         if (killsText == null)
@@ -119,12 +116,16 @@ public class PlayerKills : MonoBehaviour
             return;
         }
 
+        killsText.text = killsPrefix + currentKills;
+
         if (gameOverKillsText != null)
         {
-            // TODO: Display the player's total kills
+            // Display the player's total kills
             // on the Game Over screen.
 
-
+            gameOverKillsText.text = currentKills.ToString();
         }
+
+
     }
 }
