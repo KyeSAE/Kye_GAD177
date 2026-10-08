@@ -4,7 +4,6 @@ using UnityEngine.InputSystem;
 [RequireComponent(typeof(Rigidbody2D))]
 public class PlayerMovement : MonoBehaviour
 {
-    // Complete each section marked TODO.
 
     [Header("Movement")]
     public float moveSpeed = 5f;
@@ -77,22 +76,6 @@ public class PlayerMovement : MonoBehaviour
             // Set the vertical movement direction to move up.
             x = -1f;
         }
-
-        // TODO: Add an if statement that checks whether the player
-        // is holding S or the Down Arrow.
-        // Set the vertical movement direction to move down.
-
-
-
-        // TODO: Add an if statement that checks whether the player
-        // is holding A or the Left Arrow.
-        // Set the horizontal movement direction to move left.
-
-
-
-        // TODO: Add an if statement that checks whether the player
-        // is holding D or the Right Arrow.
-        // Set the horizontal movement direction to move right.
 
 
 
