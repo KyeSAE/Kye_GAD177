@@ -59,9 +59,7 @@ public class EnemyHealth : MonoBehaviour
         // Check if spriteRenderer is null.
         // If it is, get the SpriteRenderer component from this GameObject.
         if(spriteRenderer == null)
-        {
             spriteRenderer = GetComponent<SpriteRenderer>();
-        }
 
         // Check that spriteRenderer is not null.
         // If it exists, store its current colour in originalColor.
@@ -101,7 +99,6 @@ public class EnemyHealth : MonoBehaviour
 
         if (showDebugLogs == true)
         {
-            Debug.Log("EnemyHealth (" + name + "): Started with HP " + currentHP + "/" + maxHP);
             Debug.Log($"EnemyHealth ( {name} ): Started with HP {currentHP} / maxHP");
         }
     }
@@ -279,11 +276,11 @@ public class EnemyHealth : MonoBehaviour
         }
 
         // Generate a random value between 0 and 1.
-        float roll = Random.Range(0,2);
+        float roll = Random.Range(0f,1f);
 
         // Check whether the roll is more than the drop chance
         // to see if the enemy successfully drops coins.
-        if (roll > 0)
+        if (roll > coinDropChance)
         {
             if (showDebugLogs == true)
             {
