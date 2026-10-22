@@ -2,8 +2,6 @@ using UnityEngine;
 
 public class PlayerHealthTouchEffect : MonoBehaviour
 {
-    // Complete each section marked TODO.
-
     [Header("Health Change")]
     public int healthChange = 1;
 
@@ -25,62 +23,76 @@ public class PlayerHealthTouchEffect : MonoBehaviour
 
     private void Start()
     {
-        // TODO: Check if audioSource is null.
         // If it is, get the AudioSource component from this GameObject.
-
+        if(audioSource == null)
+            audioSource = GetComponent<AudioSource>();
 
     }
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        // TODO: Check whether the object that entered the trigger
+        // Check whether the object that entered the trigger
         // has the Player tag.
         // If it does not, stop this function.
+        if(!other.CompareTag("Player"))
+        {
+            return;
+        }
 
-
-
-        // TODO: Get the PlayerHealth component from the object
+        // Get the PlayerHealth component from the object
         // that entered the trigger.
-        PlayerHealth playerHealth = null;
-
-
+        PlayerHealth playerHealth = other.GetComponent<PlayerHealth>();
 
         // TODO: Check whether playerHealth is null.
         // If it is, stop this function.
+        if(playerHealth == null)
+        {
+            return;
+        }
 
-
-
-        // TODO: Check whether healthChange is greater than 0.
+        // Check whether healthChange is greater than 0.
         // If it is:
         // - Heal the player by healthChange.
         // - Print the amount healed if debug logs are enabled.
+        if(healthChange > 0)
+        {
+            playerHealth.Heal(healthChange);
 
-
-
-
+            if(showDebugLogs)
+            {
+                Debug.Log($"Healed {healthChange} amount.");
+            }
+        }
 
         // TODO: Otherwise, check whether healthChange is less than 0.
         // If it is:
         // - Damage the player using the positive version of healthChange.
         // - Print the amount of damage if debug logs are enabled.
+        else if (healthChange < 0)
+        {
+            playerHealth.TakeDamage(-healthChange);
 
-
-
-
+            if (showDebugLogs)
+            {
+                Debug.Log($"Damaged {healthChange} amount.");
+            }
+        } else
+        {
+            if(showDebugLogs)
+            {
+                Debug.Log("No Effect.");
+            }
+        }
 
         // TODO: Otherwise, healthChange must be 0.
         // If debug logs are enabled, print that no effect occurred.
 
-
-
-
-
         // TODO: Call the function that plays the feedback.
-
+        PlayFeedback();
 
 
         // TODO: Check whether destroyAfterTouch is true.
-        if (destroyAfterTouch == true)
+        if (destroyAfterTouch)
         {
             // Remove this GameObject after it has been used.
             Destroy(gameObject);
@@ -99,7 +111,8 @@ public class PlayerHealthTouchEffect : MonoBehaviour
 
         // TODO: Check that audioSource and touchSound are not null.
         // If they exist, play touchSound using the AudioSource.
-
-
+        if (audioSource != null && touchSound != null) { 
+            audioSource.PlayOneShot(touchSound);
+        }
     }
 }

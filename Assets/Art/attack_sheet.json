@@ -1,0 +1,76 @@
+{
+  "image": "attack_sheet.png",
+  "width": 384,
+  "height": 32,
+  "frame_width": 48,
+  "frame_height": 16,
+  "columns": 8,
+  "rows": 2,
+  "spacing": 0,
+  "fps": 24,
+  "frames": [
+    {
+      "timeline_frame": 0,
+      "x": 0,
+      "y": 0,
+      "w": 48,
+      "h": 16
+    },
+    {
+      "timeline_frame": 1,
+      "x": 48,
+      "y": 0,
+      "w": 48,
+      "h": 16
+    },
+    {
+      "timeline_frame": 2,
+      "x": 96,
+      "y": 0,
+      "w": 48,
+      "h": 16
+    },
+    {
+      "timeline_frame": 3,
+      "x": 144,
+      "y": 0,
+      "w": 48,
+      "h": 16
+    },
+    {
+      "timeline_frame": 4,
+      "x": 192,
+      "y": 0,
+      "w": 48,
+      "h": 16
+    },
+    {
+      "timeline_frame": 5,
+      "x": 240,
+      "y": 0,
+      "w": 48,
+      "h": 16
+    },
+    {
+      "timeline_frame": 6,
+      "x": 288,
+      "y": 0,
+      "w": 48,
+      "h": 16
+    },
+    {
+      "timeline_frame": 7,
+      "x": 336,
+      "y": 0,
+      "w": 48,
+      "h": 16
+    },
+    {
+      "timeline_frame": 8,
+      "x": 0,
+      "y": 16,
+      "w": 48,
+      "h": 16
+    }
+  ]
+}

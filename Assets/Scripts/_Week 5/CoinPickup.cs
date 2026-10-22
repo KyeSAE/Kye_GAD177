@@ -3,8 +3,6 @@ using UnityEngine;
 [RequireComponent(typeof(Collider2D))]
 public class CoinPickup : MonoBehaviour
 {
-    // Complete each section marked TODO.
-
     [Header("Coin Settings")]
     public int moneyAmount = 1;
 

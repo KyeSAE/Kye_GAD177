@@ -57,7 +57,7 @@ public class EnemyDamageOnTouch : MonoBehaviour
         if (applyKnockback == true)
         {
             // TODO: Get the Rigidbody2D attached to the player's collider.
-            Rigidbody2D playerRb = null;
+            Rigidbody2D playerRb = collision.gameObject.GetComponent<Rigidbody2D>();
 
 
 
@@ -71,7 +71,7 @@ public class EnemyDamageOnTouch : MonoBehaviour
                 Vector2 targetPosition = playerRb.position + direction * knockbackDistance;
 
                 // TODO: Move the player's Rigidbody2D to targetPosition. Hint you'll need to use the Move Function of rigidbody.
-
+                playerRb.MovePosition(targetPosition);
 
 
                 // TODO: If debug logs are enabled,
