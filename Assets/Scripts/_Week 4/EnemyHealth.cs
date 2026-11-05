@@ -77,13 +77,13 @@ public class EnemyHealth : MonoBehaviour
         // Check if playerExperience is null.
         // If it is, find the PlayerExperience component in the scene.
         if (playerExperience == null)
-            GameObject.FindAnyObjectByType<PlayerExperience>();
+            playerExperience = GameObject.FindAnyObjectByType<PlayerExperience>();
 
 
         // Check if playerMoney is null.
         // If it is, find the PlayerMoney component in the scene.
         if(playerMoney == null)
-            GameObject.FindAnyObjectByType<PlayerMoney>();
+            playerMoney = GameObject.FindAnyObjectByType<PlayerMoney>();
 
 
         // Check if playerKills is null.
