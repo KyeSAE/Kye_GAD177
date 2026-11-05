@@ -39,7 +39,7 @@ public class SingleMeleeAutoAttack : MonoBehaviour
         // Check if playerSpriteRenderer is null.
         // If it is, get the SpriteRenderer from this GameObject or its children.
         if (playerSpriteRenderer == null)
-            playerSpriteRenderer = GetComponent<SpriteRenderer>();
+            playerSpriteRenderer = GetComponentInChildren<SpriteRenderer>();
 
         // Get the Animator if one has not been assigned.
         if (animator == null)
@@ -171,16 +171,15 @@ public class SingleMeleeAutoAttack : MonoBehaviour
         {
             // Get the SpriteRenderer from the slash object.
             SpriteRenderer slashRenderer = slashObj.GetComponent<SpriteRenderer>();
-
             // Check that slashRenderer is not null.
             // If it exists, set its flipX value based on facingRight.
             if (slashRenderer != null)
-                slashRenderer.flipX = !facingRight;
+                slashRenderer.flipX = facingRight;
 
         }
 
-        // Get the MeleeSlash script from the slash object.
-        MeleeSlash slash = slashObj.GetComponent<MeleeSlash>();
+            // Get the MeleeSlash script from the slash object.
+            MeleeSlash slash = slashObj.GetComponent<MeleeSlash>();
 
         // Check that slash is not null.
         // If it exists, call Initialize and give it the player's damage.

@@ -23,45 +23,49 @@ public class EnemyDamageOnTouch : MonoBehaviour
 
     private void Start()
     {
-        // TODO: Check if audioSource is null.
+        // Check if audioSource is null.
         // If it is, get the AudioSource component from this GameObject.
-
+        if(audioSource == null)
+            audioSource = GetComponent<AudioSource>();
 
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        // TODO: Check whether the object involved in the collision
+        // Check whether the object involved in the collision
         // has the Player tag.
         // If it does not, stop this function.
+        if (collision.gameObject.tag != "Player")
+            return;
 
-
-
-        // TODO: Get the PlayerHealth component from the
+        // Get the PlayerHealth component from the
         // object involved in the collision.
-        PlayerHealth playerHealth = null;
+        PlayerHealth playerHealth = collision.gameObject.GetComponent<PlayerHealth>();
 
-
-
-        // TODO: Check that playerHealth is not null.
+        // Check that playerHealth is not null.
         // If it exists:
         // - Damage the player using contactDamage.
         // - Call PlayHitSound.
         // - Print the damage dealt if debug logs are enabled.
+        if(playerHealth != null )
+        {
+            playerHealth.TakeDamage(contactDamage);
+            audioSource.PlayOneShot(hitSound);
+
+            if(showDebugLogs)
+            {
+                Debug.Log($"{contactDamage} contact Damage Dealt");
+            }
+        }
 
 
-
-
-
-        // TODO: Check whether knockback is enabled.
+        // Check whether knockback is enabled.
         if (applyKnockback == true)
         {
-            // TODO: Get the Rigidbody2D attached to the player's collider.
+            // Get the Rigidbody2D attached to the player's collider.
             Rigidbody2D playerRb = collision.gameObject.GetComponent<Rigidbody2D>();
 
-
-
-            // TODO: Check that playerRb is not null.
+            // Check that playerRb is not null.
             if (playerRb != null)
             {
                 // Calculate the direction from the enemy to the player.
@@ -70,13 +74,15 @@ public class EnemyDamageOnTouch : MonoBehaviour
                 // Calculate where the Rigidbody2D should move to.
                 Vector2 targetPosition = playerRb.position + direction * knockbackDistance;
 
-                // TODO: Move the player's Rigidbody2D to targetPosition. Hint you'll need to use the Move Function of rigidbody.
+                // Move the player's Rigidbody2D to targetPosition. Hint you'll need to use the Move Function of rigidbody.
                 playerRb.MovePosition(targetPosition);
 
 
-                // TODO: If debug logs are enabled,
+                // If debug logs are enabled,
                 // print the new knockback position.
-
+                if (showDebugLogs) {
+                    Debug.Log($"Knocked back to {targetPosition}");
+                }
 
             }
         }
@@ -84,9 +90,10 @@ public class EnemyDamageOnTouch : MonoBehaviour
 
     private void PlayHitSound()
     {
-        // TODO: Check whether audioSource is null.
+        // Check whether audioSource is null.
         // If it is, stop this function.
-
+        if (audioSource == null)
+            return;
 
 
         // TODO: Check whether hitSound is null.

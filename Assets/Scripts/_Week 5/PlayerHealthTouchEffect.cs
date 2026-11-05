@@ -43,7 +43,7 @@ public class PlayerHealthTouchEffect : MonoBehaviour
         // that entered the trigger.
         PlayerHealth playerHealth = other.GetComponent<PlayerHealth>();
 
-        // TODO: Check whether playerHealth is null.
+        // Check whether playerHealth is null.
         // If it is, stop this function.
         if(playerHealth == null)
         {
@@ -64,7 +64,7 @@ public class PlayerHealthTouchEffect : MonoBehaviour
             }
         }
 
-        // TODO: Otherwise, check whether healthChange is less than 0.
+        // Otherwise, check whether healthChange is less than 0.
         // If it is:
         // - Damage the player using the positive version of healthChange.
         // - Print the amount of damage if debug logs are enabled.
@@ -84,14 +84,18 @@ public class PlayerHealthTouchEffect : MonoBehaviour
             }
         }
 
-        // TODO: Otherwise, healthChange must be 0.
+        // Otherwise, healthChange must be 0.
         // If debug logs are enabled, print that no effect occurred.
+        if(showDebugLogs)
+        {
+            Debug.Log("No Effect Occurred");
+        }
 
-        // TODO: Call the function that plays the feedback.
+        // Call the function that plays the feedback.
         PlayFeedback();
 
 
-        // TODO: Check whether destroyAfterTouch is true.
+        //  Check whether destroyAfterTouch is true.
         if (destroyAfterTouch)
         {
             // Remove this GameObject after it has been used.
@@ -109,7 +113,7 @@ public class PlayerHealthTouchEffect : MonoBehaviour
             Destroy(particleObject, particleLifetime);
         }
 
-        // TODO: Check that audioSource and touchSound are not null.
+        // Check that audioSource and touchSound are not null.
         // If they exist, play touchSound using the AudioSource.
         if (audioSource != null && touchSound != null) { 
             audioSource.PlayOneShot(touchSound);
