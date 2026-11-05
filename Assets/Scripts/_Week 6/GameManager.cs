@@ -87,7 +87,7 @@ public class GameManager : MonoBehaviour
 
     public void GameOver()
     {
-        // TODO: Check whether the game is already over.
+        // Check whether the game is already over.
         // If it is, stop this function.
         if (gameIsOver)
             return;
@@ -145,7 +145,7 @@ public class GameManager : MonoBehaviour
         spawnerCount++;
 
 
-        // TODO: If debug logs are enabled, print the current spawner count.
+        // If debug logs are enabled, print the current spawner count.
         if (showDebugLogs)
             Debug.Log($"Current Spawner Count: {spawnerCount}");
 

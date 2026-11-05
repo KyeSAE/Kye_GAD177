@@ -4,7 +4,6 @@ using UnityEngine.InputSystem;
 
 public class EnemySpawner : MonoBehaviour
 {
-    // Complete each section marked TODO.
 
     [Header("Spawner Settings")]
     public GameObject enemyPrefab;
@@ -67,7 +66,7 @@ public class EnemySpawner : MonoBehaviour
         PlayIdleAnimation();
 
 
-        // TODO: If debug logs are enabled, print that the EnemySpawner has started.
+        // If debug logs are enabled, print that the EnemySpawner has started.
         if (showDebugLogs)
             Debug.Log("Enemy Spawner has started");
 
@@ -292,7 +291,7 @@ public class EnemySpawner : MonoBehaviour
         // Loop through every GameObject in the spawnedEnemies collection.
         for (int i = 0; i < spawnedEnemies.Count; i++)
         {
-            // TODO: Check that the enemy at position i is not null.
+            // Check that the enemy at position i is not null.
             if(spawnedEnemies[i] != null)
             {
                 Destroy(spawnedEnemies[i]);
